@@ -131,6 +131,34 @@ namespace Calculator
             count = 4;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //decimal point
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            int c = textBox1.TextLength;
+            int flag = 0;
+            string text = textBox1.Text;
+            for (int i = 0; i < c; i++)
+            {
+                if (text[i].ToString() == ",")
+                {
+                    flag = 1; break;
+                }
+                else
+                {
+                    flag = 0;
+                }
+            }
+            if (flag == 0)
+            {
+                textBox1.Text = textBox1.Text + ",";
+            }
+        }
+
         private void button11_Click(object sender, EventArgs e)
         {
             num1 = float.Parse(textBox1.Text);
